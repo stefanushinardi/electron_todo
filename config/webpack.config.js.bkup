@@ -1,12 +1,15 @@
 var path = require('path');
-var HTMLWebpackPlugin = require('html-webpack-plugin');
-var config = require(path.join(__dirname, "config.js"));
+var webpack = require('webpack');
+var userConfig = require('../config/config.js');
+//var css = require("!css!sass!./file.scss");
 
-module.exports = {
-  entry: config.client_entry,
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+var config = {
+  entry: userConfig.client_entry,
   devtool: 'eval',
   output: {
-    path: path.resolve(__dirname, '..','build','static'),
+    path: path.resolve(__dirname, '../build','static'),
     filename: 'client.js',
     publicPath: '/'
   },
@@ -16,20 +19,26 @@ module.exports = {
   },
   plugins: [
     //new webpack.optimize.OccurenceOrderPlugin(),
-    new HTMLWebpackPlugin({
+    new HtmlWebpackPlugin({
       title: 'react framework',
       //filename: 'assets/admin.html'
     })
   ],
   sassLoader: {
-    includePaths: [path.resolve(__dirname, "..","node_modules/compass-mixins/lib")]
+    includePaths: [path.resolve(__dirname, "../node_modules/compass-mixins/lib")]
   },
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
-        loaders: ['babel'],
-        exclude: [path.resolve(__dirname, "../node_modules")],
+        include: [
+          path.resolve(__dirname, '../bower_components/react-routing/src'),
+          path.resolve(__dirname, '../src')
+        ],
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015', 'react']
+        }
       },
       {
         test: /\.html?$/,
@@ -65,3 +74,5 @@ module.exports = {
     ]
   }
 };
+module.exports = config;
+
