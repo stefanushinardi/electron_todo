@@ -1,10 +1,11 @@
 {
-  "name": "react_test",
+  "name": "react_framework",
   "version": "1.0.0",
-  "description": "simple learning framework for reactJS, flux, gulp, es6, jade and other stuff",
-  "main": "index.js",
+  "description": "simple learning framework for reactJS, flux, gulp, es6, and other stuff",
   "scripts": {
-    "test": "eslint src && jest"
+    "test": "eslint",
+    "start": "gulp",
+    "dist": "gulp dist"
   },
   "repository": {
     "type": "git",
@@ -13,12 +14,9 @@
   "author": "Xun Chen",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.13.4",
-    "gulp": "^3.9.0",
+    "bootstrap-sass": "^3.3.6",
     "react": "^0.14.7",
-    "react-dom": "^0.14.7",
-    "webpack-dev-server": "^1.14.1",
-    "webpack-stream": "^3.1.0"
+    "react-dom": "^0.14.7"
   },
   "devDependencies": {
     "argv": "0.0.2",
@@ -29,10 +27,14 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
+    "classnames": "^2.2.3",
     "compass-mixins": "^0.12.7",
     "css-loader": "^0.23.1",
     "del": "^2.2.0",
+    "express": "^4.13.4",
+    "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "gulp": "^3.9.1",
     "gulp-hot-reload": "^1.2.4",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
@@ -52,6 +54,7 @@
     "vinyl-named": "^1.1.0",
     "vinyl-named-with-path": "^1.0.0",
     "webpack": "^1.12.12",
-    "webpack-hot-middleware": "^2.6.4"
+    "webpack-hot-middleware": "^2.6.4",
+    "webpack-stream": "^3.1.0"
   }
 }

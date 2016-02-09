@@ -1,0 +1,61 @@
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css");
+//@import url(https://fonts.googleapis.com/css?family=Lato:300,400,500,600,700,100italic);
+
+/************************PADDING ARRAY**************** */
+
+// array of padding classes
+@for $i from 0 through 30 {
+  .pad-#{$i} {
+    padding: $i * 1% !important;
+  }
+  .padv-#{$i} {
+    padding-top: $i * 1% !important;
+    padding-bottom: $i * 1% !important;
+  }
+  .padh-#{$i} {
+    padding-left: $i * 1% !important;
+    padding-right: $i * 1% !important;
+  }
+  .padl-#{$i} {
+    padding-left: $i * 1% !important;
+  }
+  .padr-#{$i} {
+    padding-right: $i * 1% !important;
+  }
+  .padt-#{$i} {
+    padding-top: $i * 1% !important;
+  }
+  .padb-#{$i} {
+    padding-bottom: $i * 1% !important;
+  }
+}
+
+/************************MARGIN ARRAY***************** */
+
+// array of margin classes
+@for $i from 0 through 30 {
+  .marg-#{$i} {
+    margin: $i * 1% !important;
+  }
+  .margv-#{$i} {
+    margin-top: $i * 1% !important;
+    margin-bottom: $i * 1% !important;
+  }
+  .margh-#{$i} {
+    margin-left: $i * 1% !important;
+    margin-right: $i * 1% !important;
+  }
+  .margl-#{$i} {
+    margin-left: $i * 1% !important;
+  }
+  .margr-#{$i} {
+    margin-right: $i * 1% !important;
+  }
+  .margt-#{$i} {
+    margin-top: $i * 1% !important;
+  }
+  .margb-#{$i} {
+    margin-bottom: $i * 1% !important;
+  }
+}
+

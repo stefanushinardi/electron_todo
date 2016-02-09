@@ -1,50 +1,50 @@
 var path = require('path');
 var HTMLWebpackPlugin = require('html-webpack-plugin');
 var config = require(path.join(__dirname, "config.js"));
+var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+var GLOBALS = {
+  __DEV__ : process.env.NODE_ENV === 'production' ? false : true
+};
 
 module.exports = {
   entry: config.client_entry,
   devtool: 'eval',
   output: {
     path: path.resolve(__dirname, '..','build','static'),
-    filename: 'client.js',
+    filename: '[name].js',
+    chunkFilename: '[id].js',
     publicPath: '/'
   },
   stats: {
     colors: true,
     timings: true,
   },
-  plugins: [
-    //new webpack.optimize.OccurenceOrderPlugin(),
-    new HTMLWebpackPlugin({
-      title: 'react framework',
-      //filename: 'assets/admin.html'
-    })
-  ],
   sassLoader: {
-    includePaths: [path.resolve(__dirname, "..","node_modules/compass-mixins/lib")]
+    includePaths: config.sass_include_paths
   },
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
-        loaders: ['babel'],
+        loaders: ['babel'], 
         exclude: [path.resolve(__dirname, "../node_modules")],
       },
-      {
-        test: /\.html?$/,
-        include: [
-          path.resolve(__dirname, '../src/client/view')
-        ],
-        loader: 'html'
-      },
+      //{
+        //test: /\.html?$/,
+        //include: [
+          //path.resolve(__dirname, '../src/client/view')
+        //],
+        //loader: 'html'
+      //},
       {
         test:/\.css$/,
-        loaders: ["css"]
+        loader: ExtractTextPlugin.extract("style-loader","css-loader")
       },
       {
         test:/\.(scss|sass)$/,
-        loaders: ["style","css","sass"]
+        loader: ExtractTextPlugin.extract("style-loader","css-loader!sass-loader")
       },
       {
         test: /\.json$/,
@@ -63,5 +63,12 @@ module.exports = {
         loader: 'file-loader'
       }
     ]
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin("[name].css"),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new HTMLWebpackPlugin({
+      title: 'react framework',
+    })
+  ]
 };

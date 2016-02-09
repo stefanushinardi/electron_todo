@@ -1,12 +1,25 @@
-var React = require('react')
-var ReactDom = require('react-dom')
+import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 
-var App = React.createClass({
-  render: function () {
-    return (
-      <div>lol</div>
-    )
-  }
+const testClasses = classNames({
+  'test': true,
+})
+const testIds = classNames({
+  'test'            : true,
+  'row'             : true,
+  'col-xs-offset-3' : true,
+  'col-xs-6' : true,
 })
 
-module.exports = App
+class App extends Component{
+  constructor(props){
+    super(props);
+  }
+  render() {
+    return (
+      <div id={testIds} className={testClasses}> hii </div>
+    );
+  }
+}
+
+export default App;

@@ -25,6 +25,7 @@ module.exports = {
   node: {
     //do not include poly fills...
     //http://webpack.github.io/docs/configuration.html#node
+    //don't change to true, else gulp might not compile properly
     console: false,
     process: false,
     global: false,

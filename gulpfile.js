@@ -75,7 +75,8 @@ gulp.task('watch', function() {
     path.join(__dirname,'src/**/*.jsx'), 
     path.join(__dirname,'src/**/*.html'),
     path.join(__dirname,'src/**/*.scss'),
-    path.join(__dirname,'src/**/*.sass')
+    path.join(__dirname,'src/**/*.sass'),
+    path.join(__dirname,'src/**/*.css')
   ];
   gulp.watch(watchPaths, ['webpack']);
 });

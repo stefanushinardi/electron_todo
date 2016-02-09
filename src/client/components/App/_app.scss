@@ -1,7 +1,8 @@
 .test{
-  background: yellow;
+  background: shade(red,50%); //compass mixin 
   text-align: center;
   color: red;
   height: 100px;
   width: 100px;
 }
+
