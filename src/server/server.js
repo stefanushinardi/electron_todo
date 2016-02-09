@@ -1,18 +1,18 @@
-var path = require('path')
-var config = require('./../../config/config.js');
-var express = require('express')
-var app = express()
+const path = require('path')
+const config = require('./../../config/config.js');
+const express = require('express')
+const app = express()
 
-app.get('/test', function(req, res) {
-  res.send('Hello, Hot Reload!')
+app.get('/test', (req, res) => {
+  res.send('Node server sends the client its complimeents!')
 })
 
 
 app.use('/', express.static(path.join(__dirname, 'static')))
 
-var server = app.listen(config.port, '127.0.0.1', function () {
-  var port = server.address().port
-  var host = server.address().address
+const server = app.listen(config.port, '127.0.0.1', () => {
+  const port = server.address().port
+  const host = server.address().address
   console.log('Application started at http://' + host + ':' + port)
 })
 

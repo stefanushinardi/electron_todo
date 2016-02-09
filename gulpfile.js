@@ -1,16 +1,16 @@
-var gulp = require('gulp')
-var webpackStream = require('webpack-stream')
-//var reload = require('./../gulp-hot-reload/src/index')
-var reload = require('gulp-hot-reload')
-var webpack = require('webpack')
-var gutil = require('gulp-util')
-var path = require('path')
-var config    = require(path.join(__dirname,'config/config.js'));
-var sequence  = require('run-sequence');
-var del   = require('del');
+const gulp = require('gulp')
+const webpackStream = require('webpack-stream')
+const reload = require('gulp-hot-reload')
+const webpack = require('webpack')
+const gutil = require('gulp-util')
+const path = require('path')
+const config    = require(path.join(__dirname,'config/config.js'));
+const sequence  = require('run-sequence');
+const del   = require('del');
 
-var webpack_server_config = require(config.webpack_server_config)
-var webpack_client_config = require(config.webpack_client_config)
+const webpack_server_config = require(config.webpack_server_config)
+const webpack_client_dev_config = require(config.webpack_client_dev_config)
+const webpack_client_prod_config = require(config.webpack_client_prod_config)
 
 const webpack_callback = (err, stats) => {
   if(err) throw new gutil.PluginError("webpack", err);
@@ -23,7 +23,7 @@ const webpack_callback = (err, stats) => {
   }))
 }
 
-gulp.task('clean', function() {
+gulp.task('clean', () =>  {
   del([
     config.build + '/**'
   ])
@@ -32,45 +32,58 @@ gulp.task('clean', function() {
 
 gulp.task('webpack', () => {
   gulp
-    .src(config.webpack_server_config)
+    .src(config.server_entry)
     .pipe(webpackStream(webpack_server_config, webpack, webpack_callback))
     .pipe(reload({
       port: config.port,
       react: true,
-      config: path.join(__dirname, './config/webpack.config.js')
+      config: config.webpack_client_dev_config
     }))
 })
 
-gulp.task('watch', function () {
+gulp.task('watch', () =>  {
   gulp.watch('src/**/*.js', ['webpack'])
 })
 
-gulp.task('webpack-server-dist', function () {
-  process.env.NODE_ENV = 'production'
+gulp.task('webpack-server-dist', () =>  {
   gulp
-    .src(config.webpack_server_config)
+    .src(config.server_entry)
     .pipe(webpackStream(webpack_server_config, webpack, webpack_callback))
     .pipe(gulp.dest('build'))
 })
 
-gulp.task('webpack-client-dist', function () {
-  process.env.NODE_ENV = 'production'
+gulp.task('webpack-client-dist', () =>  {
   gulp
-    .src(config.webpack_client_config)
-    .pipe(webpackStream(webpack_client_config, webpack, webpack_callback))
+    .src(config.client_entry)
+    .pipe(webpackStream(webpack_client_prod_config, webpack, webpack_callback))
     .pipe(gulp.dest('build/static'))
 })
 
+gulp.task('setNODEENVtoProd', () => {
+  process.env.NODE_ENV = 'production';// this is so .babelrc will know whether to run hmr plugins or not
+})
 
-gulp.task('webpack-dist', function(){
+gulp.task('setNODEENVtoDev', () => {
+  process.env.NODE_ENV = 'development';// this is so .babelrc will know whether to run hmr plugins or not
+})
+
+gulp.task('webpack-dist', () => {
   sequence(
+    'setNODEENVtoProd',
     'webpack-server-dist',
     'webpack-client-dist'
   )
 })
 
-gulp.task('watch', function() {
-  var watchPaths = [
+gulp.task('webpack-dev', () => {
+  sequence(
+    'setNODEENVtoDev',
+    'webpack'
+  )
+})
+
+gulp.task('watch', () =>  {
+  const watchPaths = [
     path.join(__dirname,'src/**/*.js'),
     path.join(__dirname,'src/**/*.jsx'), 
     path.join(__dirname,'src/**/*.html'),
@@ -78,15 +91,15 @@ gulp.task('watch', function() {
     path.join(__dirname,'src/**/*.sass'),
     path.join(__dirname,'src/**/*.css')
   ];
-  gulp.watch(watchPaths, ['webpack']);
+  gulp.watch(watchPaths, ['webpack-dev']);
 });
 
 // Default task. Type 'gulp' in terminal to get build system going.
-gulp.task('default', ['webpack','watch'], function() {
+gulp.task('default', ['webpack-dev','watch'], () =>  {
   gutil.log('watching...');
 });
 
-gulp.task('dist', false, function() {
+gulp.task('dist', false, () =>  {
   sequence(
     'clean',
     'webpack-dist'

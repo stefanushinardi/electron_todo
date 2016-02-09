@@ -2,13 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
 const testClasses = classNames({
-  'test': true,
-})
-const testIds = classNames({
   'test'            : true,
   'row'             : true,
   'col-xs-offset-3' : true,
-  'col-xs-6' : true,
+  'col-xs-6'        : true,
+})
+const testIds = classNames({
+  'test'            : true,
 })
 
 class App extends Component{
