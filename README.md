@@ -1,4 +1,4 @@
-AKUDA REACT GULP - WEBPACK WITH HMR FRAMEWORK 
+AKUDA ReactJS Gulp - WEBPACK WITH Hot Module Replacement BoilerPlate
 =============================================
 
 
