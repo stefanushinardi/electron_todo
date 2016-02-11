@@ -7,7 +7,9 @@
 @import "mixins";
 @import "fonts";
 
-@import "../../view/index";
-@import "../../components/components";
+@import "../../view/*.scss";
+@import "../../view/**/*.scss";
+@import "../../components/**/*.scss";
+
 
 

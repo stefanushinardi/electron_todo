@@ -24,15 +24,15 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        loaders: ['babel'], 
+        loaders: ['babel','import-glob-loader'], 
         exclude: [path.resolve(__dirname, "../node_modules")],
       },
       //{
-        //test: /\.html?$/,
-        //include: [
-          //path.resolve(__dirname, '../src/client/view')
-        //],
-        //loader: 'html'
+      //test: /\.html?$/,
+      //include: [
+      //path.resolve(__dirname, '../src/client/view')
+      //],
+      //loader: 'html'
       //},
       {
         test:/\.css$/,
@@ -40,7 +40,7 @@ module.exports = {
       },
       {
         test:/\.(scss|sass)$/,
-        loaders: ["style-loader","css-loader","sass-loader"]
+        loaders: ["style-loader","css-loader","sass-loader",'import-glob-loader']
       },
       {
         test: /\.json$/,

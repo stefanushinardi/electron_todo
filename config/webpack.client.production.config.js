@@ -24,7 +24,7 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        loaders: ['babel'], 
+        loaders: ['babel','import-glob-loader'], 
         exclude: [path.resolve(__dirname, "../node_modules")],
       },
       //{
@@ -40,7 +40,7 @@ module.exports = {
       },
       {
         test:/\.(scss|sass)$/,
-        loader: ExtractTextPlugin.extract("style-loader","css-loader!sass-loader")
+        loader: ExtractTextPlugin.extract("style-loader","css-loader!sass-loader!import-glob-loader")
       },
       {
         test: /\.json$/,

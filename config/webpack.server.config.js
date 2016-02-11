@@ -18,7 +18,7 @@ module.exports = {
       {
         test: /\.jsx?$/, 
         exclude: [path.resolve(__dirname, "../node_modules")],
-        loader: 'babel'
+        loaders: ['babel','import-glob-loader']
       }
     ]
   },
