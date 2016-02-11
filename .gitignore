@@ -1,0 +1,10 @@
+node_modules
+test
+tests
+build
+!.gitignore
+!.babelrc
+!.eslintrc
+**/.DS_Store
+**/**/.DS_Store
+
