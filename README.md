@@ -1,4 +1,4 @@
-AKUDA ReactJS Gulp&Webpack with Hot Module Replacement BoilerPlate
+ReactJS Gulp&Webpack with Hot Module Replacement BoilerPlate
 ==================================================================
 
 

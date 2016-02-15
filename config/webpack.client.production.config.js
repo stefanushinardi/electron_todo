@@ -62,7 +62,9 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin("[name].css"),
+    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
     new HTMLWebpackPlugin({
       title: 'react framework',
     })
