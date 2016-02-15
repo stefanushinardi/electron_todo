@@ -67,6 +67,8 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin(),
     new HTMLWebpackPlugin({
       title: 'react framework',
+      template : config.html_index_template_path,
+      inject: 'body'
     })
   ]
 };

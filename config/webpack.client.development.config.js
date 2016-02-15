@@ -64,6 +64,8 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new HTMLWebpackPlugin({
       title: 'react framework',
+      template : config.html_index_template_path,
+      inject: 'body'
     })
   ]
 };

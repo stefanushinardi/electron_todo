@@ -24,11 +24,6 @@ $extrabold_italic: "../font/opensans-extrabolditalic-webfont";
   src: url("#{$light}.ttf");
   font-weight: 300;
 }
-@font-face{
-  font-family: Open Sans;
-  src: url("#{$light}.eot");
-  font-weight: 300;
-}
 
 @font-face{
   font-family: Open Sans;
@@ -48,12 +43,6 @@ $extrabold_italic: "../font/opensans-extrabolditalic-webfont";
   font-weight: 300;
   font-style: italic;
 }
-@font-face{
-  font-family: Open Sans;
-  src: url("#{$light_italic}.eot");
-  font-weight: 300;
-  font-style: italic;
-}
 
 @font-face{
   font-family: Open Sans;
@@ -68,11 +57,6 @@ $extrabold_italic: "../font/opensans-extrabolditalic-webfont";
 @font-face{
   font-family: Open Sans;
   src: url("#{$regular}.ttf");
-  font-weight: 400;
-}
-@font-face{
-  font-family: Open Sans;
-  src: url("#{$regular}.eot");
   font-weight: 400;
 }
 
@@ -94,12 +78,6 @@ $extrabold_italic: "../font/opensans-extrabolditalic-webfont";
   font-weight: 400;
   font-style: italic;
 }
-@font-face{
-  font-family: Open Sans;
-  src: url("#{$regular_italic}.eot");
-  font-weight: 400;
-  font-style: italic;
-}
 
 @font-face{
   font-family: Open Sans;
@@ -114,11 +92,6 @@ $extrabold_italic: "../font/opensans-extrabolditalic-webfont";
 @font-face{
   font-family: Open Sans;
   src: url("#{$semibold}.ttf");
-  font-weight: 500;
-}
-@font-face{
-  font-family: Open Sans;
-  src: url("#{$semibold}.eot");
   font-weight: 500;
 }
 
@@ -140,12 +113,6 @@ $extrabold_italic: "../font/opensans-extrabolditalic-webfont";
   font-weight: 500;
   font-style: italic;
 }
-@font-face{
-  font-family: Open Sans;
-  src: url("#{$semibold_italic}.eot");
-  font-weight: 500;
-  font-style: italic;
-}
 
 @font-face{
   font-family: Open Sans;
@@ -160,11 +127,6 @@ $extrabold_italic: "../font/opensans-extrabolditalic-webfont";
 @font-face{
   font-family: Open Sans;
   src: url("#{$bold}.ttf");
-  font-weight: 600;
-}
-@font-face{
-  font-family: Open Sans;
-  src: url("#{$bold}.eot");
   font-weight: 600;
 }
 
@@ -186,12 +148,6 @@ $extrabold_italic: "../font/opensans-extrabolditalic-webfont";
   font-weight: 600;
   font-style: italic;
 }
-@font-face{
-  font-family: Open Sans;
-  src: url("#{$bold_italic}.eot");
-  font-weight: 600;
-  font-style: italic;
-}
 
 @font-face{
   font-family: Open Sans;
@@ -206,11 +162,6 @@ $extrabold_italic: "../font/opensans-extrabolditalic-webfont";
 @font-face{
   font-family: Open Sans;
   src: url("#{$extrabold}.ttf");
-  font-weight: 700;
-}
-@font-face{
-  font-family: Open Sans;
-  src: url("#{$extrabold}.eot");
   font-weight: 700;
 }
 
@@ -229,12 +180,6 @@ $extrabold_italic: "../font/opensans-extrabolditalic-webfont";
 @font-face{
   font-family: Open Sans;
   src: url("#{$extrabold_italic}.ttf");
-  font-weight: 700;
-  font-style: italic;
-}
-@font-face{
-  font-family: Open Sans;
-  src: url("#{$extrabold_italic}.eot");
   font-weight: 700;
   font-style: italic;
 }
