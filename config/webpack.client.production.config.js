@@ -27,20 +27,13 @@ module.exports = {
         loaders: ['babel','import-glob-loader'], 
         exclude: [path.resolve(__dirname, "../node_modules")],
       },
-      //{
-        //test: /\.html?$/,
-        //include: [
-          //path.resolve(__dirname, '../src/client/view')
-        //],
-        //loader: 'html'
-      //},
       {
         test:/\.css$/,
         loader: ExtractTextPlugin.extract("style-loader","css-loader")
       },
       {
         test:/\.(scss|sass)$/,
-        loader: ExtractTextPlugin.extract("style-loader","css-loader!sass-loader!import-glob-loader")
+        loader: ExtractTextPlugin.extract("style-loader","css-loader","sass-loader","import-glob-loader")
       },
       {
         test: /\.json$/,
@@ -66,7 +59,7 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin(),
     new HTMLWebpackPlugin({
-      title: 'react framework',
+      title: `react framework`,
       template : config.html_index_template_path,
       inject: 'body'
     })

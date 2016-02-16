@@ -7,8 +7,8 @@ class Projects extends Component{
       <div id="Projects">
         <h1>
           This is my project
-          <Info />
         </h1>
+        <Info />
       </div>
     )
   }

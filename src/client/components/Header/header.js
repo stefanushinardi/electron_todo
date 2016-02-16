@@ -9,7 +9,7 @@ class Header extends Component{
   render() {
     return (
       <div id="header" className="row pad-3">
-        <div className="col-sm-7 col-sm-offset-3 col-xs-12 text-center">The Header</div>
+        <div className="col-sm-8 col-sm-offset-2 col-xs-12 text-center">The Header</div>
         <div id="headerLinks" className="col-sm-2 col-xs-12 text-center">
           <div className="row">
             <div className="col-sm-6 col-xs-12">

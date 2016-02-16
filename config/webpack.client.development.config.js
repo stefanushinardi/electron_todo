@@ -27,13 +27,6 @@ module.exports = {
         loaders: ['babel','import-glob-loader'], 
         exclude: [path.resolve(__dirname, "../node_modules")],
       },
-      //{
-      //test: /\.html?$/,
-      //include: [
-      //path.resolve(__dirname, '../src/client/view')
-      //],
-      //loader: 'html'
-      //},
       {
         test:/\.css$/,
         loaders: ["style-loader","css-loader"]

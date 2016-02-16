@@ -10,6 +10,7 @@ const config = {
   webpack_server_config: path.join(__dirname, 'webpack.server.config.js'),
   build : path.join(__dirname, "..", "build"),
   port  : 1337 ,
+  host  : '127.0.0.1' ,
   sass_include_paths: [
     path.resolve(__dirname, "..","node_modules/compass-mixins/lib"),
     path.resolve(__dirname,"..","node_modules/bootstrap-sass/assets/stylesheets")
