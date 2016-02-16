@@ -2,6 +2,7 @@ node_modules
 test
 tests
 build
+nohup.out
 !.gitignore
 !.babelrc
 !.eslintrc
