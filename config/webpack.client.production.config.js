@@ -29,11 +29,11 @@ module.exports = {
       },
       {
         test:/\.css$/,
-        loader: ExtractTextPlugin.extract("style-loader","css-loader")
+        loader: ExtractTextPlugin.extract("style","css")
       },
       {
         test:/\.(scss|sass)$/,
-        loader: ExtractTextPlugin.extract("style-loader","css-loader","sass-loader","import-glob-loader")
+        loader: ExtractTextPlugin.extract("style","css!sass!import-glob")
       },
       {
         test: /\.json$/,
