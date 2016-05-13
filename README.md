@@ -18,6 +18,7 @@ After looking for a long time on the web for a reactjs boiler plate that had hmr
 # Installation
 ```bash
 npm install
+npm install eslint eslint-plugin-react -g
 ```
 
 # Usage
