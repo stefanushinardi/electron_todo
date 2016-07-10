@@ -3,7 +3,7 @@ import { Router, Route, Link , browserHistory, IndexRoute} from 'react-router'
 import classNames from 'classnames';
 //import reactMixin from 'react-mixin';
 
-class <%= name %>{
+class <%= name %>Component{
   constructor(props){
     super(props);
     this.state = {
@@ -12,7 +12,7 @@ class <%= name %>{
   }
   render(){
     return(
-      <div id="<%= name %>" >
+      <div id="<%= name %>Component" >
         <%= name %>
         {
           for(prop in this.props){
@@ -26,14 +26,14 @@ class <%= name %>{
 
 //reactMixin.onClass(<%= name %>,BaseMixin);
 
-<%= name %>.propTypes = {
+<%= name %>Component.propTypes = {
   //onComplete : React.PropTypes.func
 }
 
-<%= name %>.defaultProps = {
+<%= name %>Component.defaultProps = {
   //onComplete : ()=>{}
 };
 
-export default <%= name %>;
+export default <%= name %>Component;
 
 
