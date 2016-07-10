@@ -7,22 +7,14 @@ import Middlewares from './middlewares';
 import Store from './store';
 import Api from './api';
 import Broker from './broker';
+import bodyParser from 'body-parser';
 
 try{
   const app = express();
   const router = Router();
   const store = new Store();
   const api = new Api(router,store);
-  const middleware = new Middlewares(router);
-
-  //setup broker 
-  const broker = new Broker({host:'localhost',port:'1337'});
-  if(broker.connect()){
-    console.log('connected to broker at ' + "http://" + broker.host + ":" + broker.port);
-  };
-  broker.subscribe((data)=>{
-    store.set('data',data);
-  });
+  const middleware = new Middlewares(app,router);
 
   //setup middlewares
   app.use(middleware.router);
@@ -41,6 +33,6 @@ try{
 }
 catch(err){
   console.log(err.stack);
-
+  process.exit(1);
 }
 

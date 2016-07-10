@@ -17,5 +17,21 @@ export default class Api {
     this.router.get('/api/data', (req, res) => {
       res.json(this.store.get('data'));
     })
+    this.router.post('/api/data', (req, res) => {
+      let data = req.body;
+      if(data)
+        res.json(this.store.get('data').push(data));
+    })
+    this.router.put('/api/data/:id', (req, res) => {
+      let data = req.body;
+      let id = req.params.id;
+      this.store.get('data')[id].completed = data.completed;
+      res.json(this.store.get('data'));
+    })
+    this.router.delete('/api/data/:id', (req, res) => {
+      let id = req.params.id;
+      this.store.get('data').splice(id,1);
+      res.json(this.store.get('data'));
+    })
   }
 }

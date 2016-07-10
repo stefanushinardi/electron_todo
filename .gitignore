@@ -8,4 +8,8 @@ nohup.out
 !.eslintrc
 **/.DS_Store
 **/**/.DS_Store
+*.swp
+**/*.swp
+*.log
+**/*.log
 

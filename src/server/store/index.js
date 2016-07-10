@@ -3,6 +3,7 @@ import _ from 'lodash';
 export default class Store {
   constructor() {
     this.store = {};
+    this.store["data"] = [];
   }
   get(key){
     return this.store[key];
