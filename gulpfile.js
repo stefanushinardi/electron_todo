@@ -8,6 +8,8 @@ const config    = require(path.join(__dirname,'config/config.js'));
 const sequence  = require('run-sequence');
 const del   = require('del');
 
+const generate = require('./generator');
+
 const webpack_server_config = require(config.webpack_server_config)
 const webpack_client_dev_config = require(config.webpack_client_dev_config)
 const webpack_client_prod_config = require(config.webpack_client_prod_config)
@@ -97,6 +99,10 @@ gulp.task('watch', () =>  {
 // Default task. Type 'gulp' in terminal to get build system going.
 gulp.task('default', ['webpack-dev','watch'], () =>  {
   gutil.log('watching...');
+});
+
+gulp.task('generate',()=>{
+  generate(config);
 });
 
 gulp.task('dist', false, () =>  {

@@ -1,0 +1,13 @@
+{
+    "frames": {},
+    "meta": {
+        "app": "spritesheet-templates",
+        "version": "10.1.4",
+        "image": "~sprite.png",
+        "scale": 1,
+        "size": {
+            "w": 0,
+            "h": 0
+        }
+    }
+}

@@ -1,9 +1,18 @@
 const path = require("path");
 
 const config = {
+  generator_path : path.join(__dirname,"../generator"),
   html_index_template_path : path.join(__dirname, "../src/client/view/index.ejs"),
   client_entry : [path.join(__dirname, "../src/client/client.js")],
   server_entry : [path.join(__dirname, "../src/server/server.js")],
+  sprite: {
+    src: "../src/client/assets/img/sprite",
+    dest: {
+      image: "../src/client/assets/img/sprite.png",
+      css: "../src/client/assets/scss/sprite.scss",
+      json: " ../src/client/assets/json/sprite.json"
+    }
+  },
   dev_server_entry: [path.join(__dirname, "../tools/dev_server.js")],
   webpack_client_dev_config: path.join(__dirname, 'webpack.client.development.config.js'),
   webpack_client_prod_config: path.join(__dirname, 'webpack.client.production.config.js'),
