@@ -8,7 +8,9 @@ class Index extends Component{
   render() {
     return (
       <div id="index" className="row">
-        Hello World
+        <div className="col-xs-12">
+          Hello World
+          </div>
       </div>
     );
   }
