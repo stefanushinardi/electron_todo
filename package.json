@@ -5,7 +5,8 @@
   "scripts": {
     "test": "eslint",
     "start": "NODE_ENV=development gulp",
-    "dist": "NODE_ENV=production gulp dist"
+    "dist": "NODE_ENV=production gulp dist",
+    "gulp": "gulp"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,9 @@
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "react-mixin": "^3.0.5",
-    "react-router": "^2.5.2"
+    "react-redux": "^4.4.5",
+    "react-router": "^2.5.2",
+    "redux": "^3.5.2"
   },
   "devDependencies": {
     "babel-core": "^6.10.4",
