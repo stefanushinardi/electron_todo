@@ -1,13 +1,11 @@
 import 'babel-polyfill';
 import express, { Router } from 'express';
-//import Promise from 'bluebird';
 
 import config from './../../config/config.js';
 import Middlewares from './middlewares';
 import Store from './store';
 import Api from './api';
 import Broker from './broker';
-import bodyParser from 'body-parser';
 
 try{
   const app = express();

@@ -21,6 +21,7 @@ render(
         <Route path="/" component={Index}>
         </Route>
       </Router>
-    </Provider>,
-  ),document.getElementById('root')
+    </Provider>
+  )
+  ,document.getElementById('root')
 )
