@@ -1,0 +1,21 @@
+.CheckBox{
+  text-align: center;
+  .CheckBox__box{
+    margin: 0 auto;
+    height: 30px;
+    width: 30px;
+    display: table;
+    position: relative;
+    border: 1px solid black;
+    .CheckBox__check{
+      height: 100%;
+      width: 100%;
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 2rem;
+      line-height: 1;
+      color: red;
+      @include pointer();
+    }
+  }
+}

@@ -6,9 +6,11 @@
 @import "base";
 @import "mixins";
 @import "fonts";
+@import "colors";
 
 @import "../../view/*.scss";
 @import "../../view/**/*.scss";
+@import "../../components/**/*.scss";
 
 
 

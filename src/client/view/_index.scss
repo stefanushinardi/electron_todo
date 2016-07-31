@@ -1,2 +1,19 @@
 #index{
+  font-family: Open Sans, Sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  width: 100%;
+  position: relative;
+  #main{
+    min-height: 1000px;
+    #main__buttons{
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding: 10px;
+      height: 40px;
+      div{
+        height: 100%;
+      }
+    }
+  }
 }

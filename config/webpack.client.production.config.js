@@ -12,7 +12,7 @@ module.exports = {
     path: path.resolve(__dirname, '..','build','static'),
     filename: '[name].js',
     chunkFilename: '[id].js',
-    publicPath: '/'
+    publicPath: './'
   },
   stats: {
     colors: true,

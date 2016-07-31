@@ -4,31 +4,71 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import * as TodoActions from '../actions';
 
+import { Button } from '../components';
+import { Header,Footer,List } from './components/';
+
 class Index extends Component{
   constructor(props){
     super(props);
+    //binds
+    this.markAllComplete = this.markAllComplete.bind(this);
+    this.markAllIncomplete = this.markAllIncomplete.bind(this);
+    this.clearAllComplete = this.clearAllComplete.bind(this);
+  }
+  markAllComplete(){
+    console.log('mark all complete');
+  }
+  markAllIncomplete(){
+    console.log('mark all Incomplete');
+  }
+  clearAllComplete(){
+    console.log('clear all complete');
   }
   render() {
-    const { todos, actions } = this.props;
-    console.log(todos,actions);
     return (
-      <div id="index" className="row">
-        <div className="col-xs-12">
-          Hello World
+      <div id="index">
+        <Header></Header>
+        <main id="main">
+          <div id="main__buttons" className="row text-center">
+            <div className="col-xs-4">
+              <Button classes="Button--info" onClick={this.markAllIncomplete}>
+                Mark All Incomplete
+              </Button>
+            </div>
+            <div className="col-xs-4">
+              <Button classes="Button--success" onClick={this.markAllComplete}>
+                Mark All Complete
+              </Button>
+            </div>
+            <div className="col-xs-4">
+              <Button classes="Button--alert" onClick={this.clearAllComplete}>
+                Clear all Completed
+              </Button>
+            </div>
           </div>
+          <hr/>
+          <div id="main__list">
+            <div className="row">
+              <div className="col-xs-12">
+                <List data={this.props.todoData} actions={this.props.actions}></List>
+              </div>
+            </div>
+          </div>
+        </main>
+        <Footer></Footer>
       </div>
     );
   }
 }
 
 Index.propTypes = {
-  todos: PropTypes.array.isRequired,
+  todoData : PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired
 }
 
 function mapStateToProps(state){
   return {
-    todos: state.todos
+    todoData : state.todos
   }
 }
 

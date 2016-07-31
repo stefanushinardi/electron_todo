@@ -1,9 +1,11 @@
 import React, { Component, PropTypes } from 'react';
-import { Router, Route, Link , browserHistory, IndexRoute} from 'react-router'
+//import { Router, Route, Link , browserHistory, IndexRoute} from 'react-router'
 import classNames from 'classnames';
+import components from './components';
+import presentation from './presentation';
 //import reactMixin from 'react-mixin';
 
-class <%= name %>Container{
+class <%= name %> extends Component{
   constructor(props){
     super(props);
     this.state = {
@@ -31,8 +33,8 @@ class <%= name %>Container{
   }
   render(){
     return(
-      <div id="<%= name %>Container" >
-        <%= name %>Container
+      <div id="<%= name %>" >
+        <%= name %>
       </div>
     )
   }
@@ -40,15 +42,14 @@ class <%= name %>Container{
 
 //reactMixin.onClass(<%= name %>,BaseMixin);
 
-<%= name %>Container.propTypes = {
+<%= name %>.propTypes = {
   //onComplete : React.PropTypes.func
 }
 
-<%= name %>Container.defaultProps = {
+<%= name %>.defaultProps = {
   //onComplete : ()=>{}
 };
 
-export default <%= name %>Container;
-
+export default <%= name %>;
 
 
