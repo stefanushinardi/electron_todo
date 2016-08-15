@@ -28,11 +28,11 @@ class Footer extends Component{
   }
   render (){
     return(
-      <div id="Footer">
+      <footer id="Footer">
         <div id="Footer__comment">
           Made With <span className="heart">&hearts;</span> By <a href="https://github.com/gone369">Xun Chen</a> and <a href="https://github.com/stefanushinardi">Stefanus Hinardi</a>
         </div>
-      </div>
+      </footer>
     )
   }
 }

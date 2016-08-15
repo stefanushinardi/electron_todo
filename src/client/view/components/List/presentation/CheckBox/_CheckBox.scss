@@ -14,8 +14,13 @@
       vertical-align: middle;
       font-size: 2rem;
       line-height: 1;
-      color: red;
+      color: transparent;
       @include pointer();
+    }
+  }
+  &.checked{
+    .CheckBox__check{
+      color: red;
     }
   }
 }

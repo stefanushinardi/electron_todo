@@ -28,6 +28,11 @@
       }
     }
     tbody{
+      .no-task{
+        padding: 5vh 0;
+        font-size: 24px;
+        text-align: center;
+      }
       font-size: 1rem;
       tr{
         td{
@@ -38,8 +43,11 @@
         }
       }
       tr.List__addItem{
-        height: 50px;
-        font-size: 2rem;
+        td{
+          padding: 5vh 3vw;
+          height: 50px;
+          font-size: 2rem;
+        }
       }
     }
   }

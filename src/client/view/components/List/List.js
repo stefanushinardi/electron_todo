@@ -24,10 +24,9 @@ class List extends Component{
   componentWillUnmont(){
   }
   componentWillReceiveProps(nextProps){
-    console.log(nextProps);
   }
   onCheckBoxClick(item){
-    console.log('state changed',item);
+    this.props.actions.completeTodo(item.id);
   }
   onAddItem(){
     this.setState({showAddInputModal: true });
@@ -64,30 +63,31 @@ class List extends Component{
           </thead>
           <tbody>
             {
-            this.props.data.map((item,i)=>{
-            return (
-            <tr key={item.id}>
-              <td>
-                <CheckBox checked={item.completed} onClick={this.onCheckBoxClick} key={item.id} data={item}></CheckBox>
-              </td>
-              <td>
-                <div className="List__TaskName text-center">
-                  {item.task}
-                </div>
-              </td>
-              <td>
-                <Button classes="Button--warning" onClick={()=>{this.onEditItem(item)}} key={item.id} data={item}>
-                  Edit Task
-                </Button>
-              </td>
-              <td>
-                <Button classes="Button--alert" onClick={(e)=>{this.onDeleteItem(e,item)}} key={item.id} data={item}>
-                  Delete Task
-                </Button>
-              </td>
-            </tr>
-            )
-            }) 
+              this.props.data.length === 0 ? <tr><td colSpan="4"><div className="no-task">Why not be productive and add a task? =/</div></td></tr>:
+              this.props.data.map((item,i)=>{
+                return (
+                  <tr key={item.id}>
+                    <td>
+                      <CheckBox checked={item.completed} onClick={this.onCheckBoxClick} key={item.id} data={item}></CheckBox>
+                    </td>
+                    <td>
+                      <div className="List__TaskName text-center">
+                        {item.task}
+                      </div>
+                    </td>
+                    <td>
+                      <Button classes="Button--warning" onClick={()=>{this.onEditItem(item)}} key={item.id} data={item}>
+                        Edit Task
+                      </Button>
+                    </td>
+                    <td>
+                      <Button classes="Button--alert" onClick={(e)=>{this.onDeleteItem(e,item)}} key={item.id} data={item}>
+                        Delete Task
+                      </Button>
+                    </td>
+                  </tr>
+                )
+              }) 
             }
             <tr className="List__addItem">
               <td colSpan="4">
@@ -104,7 +104,7 @@ class List extends Component{
         {this.state.showEditInputModal ? <InputModal onSubmit={task=>{this.props.actions.editTodo(this.state.lastItemClicked.id,task)}} onHide={this.onHideInputModal}/>  : false }
       </div>
     )
-}
+  }
 }
 List.propTypes = {
   data: React.PropTypes.array.isRequired,

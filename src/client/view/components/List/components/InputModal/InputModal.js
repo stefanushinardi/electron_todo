@@ -58,7 +58,7 @@ class InputModal extends Component{
           <div className="close-icon" onClick={this.onClose} >X</div>
           <div className="row">
             <div className="columns col-xs-12 col-md-9">
-              <input type="text" value={this.state.value} onChange={this.handleInputChange}></input>
+              <input type="text" placeholder="new task" value={this.state.value} onChange={this.handleInputChange}></input>
             </div>
             <div className="columns col-xs-12 col-md-3">
               <Button classes="Button--success" onClick={this.onSubmit}>

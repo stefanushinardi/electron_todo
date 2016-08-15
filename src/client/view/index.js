@@ -16,13 +16,13 @@ class Index extends Component{
     this.clearAllComplete = this.clearAllComplete.bind(this);
   }
   markAllComplete(){
-    console.log('mark all complete');
+    this.props.actions.completeAll();
   }
   markAllIncomplete(){
-    console.log('mark all Incomplete');
+    this.props.actions.incompleteAll();
   }
   clearAllComplete(){
-    console.log('clear all complete');
+    this.props.actions.clearCompleted();
   }
   render() {
     return (

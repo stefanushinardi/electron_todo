@@ -28,11 +28,11 @@ class Header extends Component{
   }
   render (){
     return(
-      <div id="Header">
+      <header id="Header">
         <div id="Header__title">
           Electron Todo Application
         </div>
-      </div>
+      </header>
     )
   }
 }

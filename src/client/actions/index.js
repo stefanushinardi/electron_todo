@@ -20,6 +20,10 @@ export function completeAll() {
   return { type: types.COMPLETE_ALL }
 }
 
+export function incompleteAll() {
+  return { type: types.INCOMPLETE_ALL }
+}
+
 export function clearCompleted() {
   return { type: types.CLEAR_COMPLETED }
 }
